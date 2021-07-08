@@ -1,4 +1,4 @@
-# assignment calculator for Alice first project
+# assignment calculator and stopwatch for Alice first project
 In order to execute the program you need install the lybrary pyinstaller. 
 Step 1. From command line do, pip install pyinstaller.
 Step 2. Go into the folder where your ".py" file located.
