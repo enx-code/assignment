@@ -144,7 +144,7 @@ sq_btn = Button(UiCal,
              bg = 'grey',
              font = ('Comic Sans MS', 20,'bold'),
              text = '√',
-             command = lambda: sq_btn(x),
+             command = lambda:sq_btn(x),
              height=1, width=2).grid(row=4, column=1)
 plu_btn = Button(UiCal,
              padx = 20,
