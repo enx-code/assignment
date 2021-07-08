@@ -37,7 +37,7 @@ def sq_btn(x):
     import math
     num = math.sqrt(x);
     text_input.set(num)
-   
+# create window
 UiCal = Tk();
 UiCal.title('"Calculator" ©Alice')
 # UiCal.geometry("200x300") # set GUI size in pixel: width x height
@@ -137,6 +137,7 @@ min_btn = Button(UiCal,
              text = '-', # or '-' equally as valid
              command = lambda:btnOnClick("-"),
              height=1, width=2).grid(row=4, column=2)
+# i could not figure out how to make it work
 sq_btn = Button(UiCal,
              padx = 20,
              bd = 4,
