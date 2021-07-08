@@ -3,6 +3,7 @@ from tkinter import*
 App name "Calculator"
 Author: Enkhbat B.
 ©2021 Enkhbat and ©2021 Alice
+Version 1.1
 
 Some terms to define:
 padding = the space between its content and its border.
@@ -31,10 +32,11 @@ def btnClear():
     global operator
     operator = "";
     text_input.set("");
+# bellow function supposed to show squre root but it was not working!
 def sq_btn(x):
     import math
     num = math.sqrt(x);
-
+    text_input.set(num)
    
 UiCal = Tk();
 UiCal.title('"Calculator" ©Alice')
