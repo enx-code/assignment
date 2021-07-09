@@ -80,8 +80,7 @@ stopwatch_label.pack()
 #start, pause, reset quit buttons
 start_button = tk.Button(text='start',
                          height=5,
-                         width=7
-                         
+                         width=7,
                          font=('Comic Sans MS',30),
                          command=start)
 start_button.pack(side=tk.LEFT)
