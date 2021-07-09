@@ -10,7 +10,7 @@ import tkinter as tk
 # boolean variable to control state of time
 running = False
 # time variables initially set to 0
-hours, minutes, seconds = 0,0,0
+hours, minutes, seconds, milliseconds = 0,0,0,0
 
 # global
 # global will be used to modify variables putside functions
@@ -37,18 +37,20 @@ def reset():
     if running:
         #cancel updating of time using after_cancel()
         stopwatch_label.after_cancel(update_time)
-        running = False
+        running = false
     # set variable back to zero
-    global hours, minutes, seconds
-    hours,minutes, seconds = 0, 0, 0 
+    global hours, minutes, seconds, milliseconds
+    hours,minutes, seconds, milliseconds = 0, 0, 0, 0 
     #set label back to zero
-    stopwatch_label.config(text="00:00:00")
+    stopwatch_label.config(text="00:00:00:00")
 # update stopwatch function
 def update():
     #update seconds with (addition) compound assignment operator
     global hours, minutes, seconds, milliseconds
-    seconds +=1
-    
+    milliseconds +=1
+    if milliseconds == 10:
+        seconds +=1
+        milliseconds = 0
     if seconds == 60:
         minutes +=1
         seconds = 0
@@ -59,26 +61,27 @@ def update():
     hours_string = f'{hours}' if hours > 9 else f'0{hours}'
     minutes_string = f'{minutes}' if minutes > 9 else f'0{minutes}'
     seconds_string = f'{seconds}' if seconds > 9 else f'0{seconds}'
-    
-    #update timer label after 1000 ms (1 second)
-    stopwatch_label.config(text=hours_string + ':' + minutes_string + ':' + seconds_string)
+    milliseconds_string = f'{milliseconds}' if milliseconds > 9 else f'{milliseconds}'
+    #update timer label after 100 ms (1 second)
+    stopwatch_label.config(text=hours_string + ':' + minutes_string + ':' + seconds_string + ':' + milliseconds_string)
     #after each second(1000 milliseconds), call update fanction
     #use update_time variable to cancel or pause the time using after_cancel
     global update_time
-    update_time = stopwatch_label.after(1000, update)
+    update_time = stopwatch_label.after(100, update)
 #create main window
 gui = tk.Tk()
 gui.geometry('550x230')
 gui.title("Alice's Stopwatch")
 #label to display time
-stopwatch_label = tk.Label(text='00:00:00', font=("Comic Sans MS", 80))
+stopwatch_label = tk.Label(text='00:00:00:00', font=("Comic Sans MS", 80))
 stopwatch_label.pack()
 
 
 #start, pause, reset quit buttons
 start_button = tk.Button(text='start',
                          height=5,
-                         width=7,
+                         width=7
+                         
                          font=('Comic Sans MS',30),
                          command=start)
 start_button.pack(side=tk.LEFT)
