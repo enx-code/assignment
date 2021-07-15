@@ -1,0 +1,63 @@
+Def Cal_force(mass, g)
+knowing the mass and gravity you calculate the weight:
+Phy_force = mass * g;
+print(“%.2f kg of mass gives a weight of %.2f N” %(,phy_force))
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ERROR:1
+>>> %Run de_bagging.py
+Traceback (most recent call last):
+  File "/Users/Enky/Documents/lvl3coding/de_bagging.py", line 1
+    Def Cal_force(mass, g)
+                ^
+SyntaxError: invalid syntax
+>>> 
+def Cal_force(mass, g)
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ERROR:2
+    def Cal_force(mass, g)
+                         ^
+SyntaxError: invalid syntax
+>>>
+Def Cal_force(mass, g):
+
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ERROR:3
+
+    knowing the mass and gravity you calculate the weight:
+          ^
+IndentationError: expected an indented block
+
+#knowing the mass and gravity you calculate the weight:
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ERROR:4
+
+    Phy_force = mass * g;
+            ^
+IndentationError: expected an indented block
+>>> 
+After indenting
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ERROR:5
+Traceback (most recent call last):
+  File "/Users/Enky/Documents/lvl3coding/de_bagging.py", line 4
+    print(“%.2f kg of mass gives a weight of %.2f N” %(,phy_force))
+          ^
+SyntaxError: invalid character in identifier
+>>>
+print("%.2f kg of mass gives a weight of %.2f N" %(,phy_force))
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+ERROR:6
+    print("%.2f kg of mass gives a weight of %.2f N" %(,phy_force))
+                                                       ^
+SyntaxError: invalid syntax
+>>> 
+print("%.2f kg of mass gives a weight of %.2f N" %(mass,phy_force))
+
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+Last code:
+
+def Cal_force(mass, g):
+    # knowing the mass and gravity you calculate the weight:
+    Phy_force = mass * g;
+    print("%.2f kg of mass gives a weight of %.2f N" %(mass,Phy_force))
+
